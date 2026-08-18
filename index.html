@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Lineup — Git Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 id="team-name">My Dream Team</h1>
+    <p class="subtitle">Formation: <span id="formation-name">4-3-3</span></p>
+    <p class="hint">Edit <code>players.js</code> → save → refresh this page → see the change. That is how we will practice Git.</p>
+  </header>
+
+  <main class="pitch-wrap">
+    <!-- The green football field -->
+    <div class="pitch" id="pitch" aria-label="Football pitch with starting eleven">
+      <!-- Pitch markings (drawn with CSS) -->
+      <div class="mark center-circle"></div>
+      <div class="mark center-spot"></div>
+      <div class="mark halfway"></div>
+      <div class="mark penalty-box top"></div>
+      <div class="mark goal-box top"></div>
+      <div class="mark penalty-spot top"></div>
+      <div class="mark penalty-box bottom"></div>
+      <div class="mark goal-box bottom"></div>
+      <div class="mark penalty-spot bottom"></div>
+
+      <!-- Players are injected here by app.js from players.js -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>11 players on the pitch. Substitute someone in <code>players.js</code> to practice Git commits.</p>
+  </footer>
+
+  <!-- Load the player list first, then the code that draws them -->
+  <script src="players.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

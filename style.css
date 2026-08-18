@@ -1,0 +1,239 @@
+/* Reset — start from a clean slate */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0b1220;
+  color: #e8eef7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  color: #9db0c9;
+  margin-top: 0.25rem;
+}
+
+.hint {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #b8c7da;
+  line-height: 1.4;
+}
+
+code {
+  background: #1a2436;
+  color: #7dd3a7;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* ---- Pitch container ---- */
+.pitch-wrap {
+  width: min(420px, 92vw);
+}
+
+.pitch {
+  position: relative;
+  width: 100%;
+  /* Portrait pitch like a real formation view */
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(
+    180deg,
+    #1f8f45 0%,
+    #187a3a 50%,
+    #146b32 100%
+  );
+  border: 3px solid #f0f4f8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Soft grass stripes */
+.pitch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0,
+    rgba(255, 255, 255, 0.04) 10%,
+    transparent 10%,
+    transparent 20%
+  );
+  pointer-events: none;
+}
+
+/* Pitch markings */
+.mark {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+}
+
+.halfway {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0;
+  border-width: 1px 0 0 0;
+}
+
+.center-circle {
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-spot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.penalty-box.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56%;
+  height: 16%;
+  border-top: none;
+}
+
+.goal-box.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 7%;
+  border-top: none;
+}
+
+.penalty-spot.top {
+  top: 11%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%);
+}
+
+.penalty-box.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56%;
+  height: 16%;
+  border-bottom: none;
+}
+
+.goal-box.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 7%;
+  border-bottom: none;
+}
+
+.penalty-spot.bottom {
+  bottom: 11%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%);
+}
+
+/* ---- Player tokens ---- */
+.player {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  z-index: 2;
+  width: 72px;
+}
+
+.player-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffffff, #dfe7f2 55%, #b8c4d6);
+  border: 2px solid #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #0b1220;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.player-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: #9db0c9;
+  font-size: 0.85rem;
+  max-width: 480px;
+}
+
+/* Smaller screens — shrink badges a bit */
+@media (max-width: 400px) {
+  .player {
+    width: 60px;
+  }
+  .player-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .player-name {
+    font-size: 0.6rem;
+  }
+}
