@@ -30,6 +30,6 @@ const players = [
 
   // --- FORWARDS ---
   { number: 11, name: "Bale",             top: "28%", left: "78%" },
-  { number: 9,  name: "Núñez",             top: "22%", left: "50%" },
+  { number: 9,  name: "Solo",             top: "22%", left: "50%" },
   { number: 7,  name: "Díaz",              top: "28%", left: "22%" },
 ];
