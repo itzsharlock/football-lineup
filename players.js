@@ -25,7 +25,7 @@ const players = [
 
   // --- MIDFIELDERS ---
   { number: 8,  name: "Szoboszlai",        top: "52%", left: "72%" },
-  { number: 10, name: "Mac Allister",      top: "55%", left: "50%" },
+  { number: 10, name: "Divine ",      top: "55%", left: "50%" },
   { number: 38, name: "Douclan Rice",       top: "52%", left: "28%" },
 
   // --- FORWARDS ---
